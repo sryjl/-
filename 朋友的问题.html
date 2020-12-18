@@ -1,0 +1,15 @@
+<script>
+  var a = 10;
+  console.log(window.a === a); //true
+  {
+    console.log(window.a === a); //false
+    a();
+    a = 99;
+    function a() {
+      console.log(window.a === a); //true
+      a = 30;
+      console.log(window.a === a); //false
+    }
+  }
+  console.log(window.a); //99
+</script>
